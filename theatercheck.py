@@ -78,8 +78,8 @@ def addMoviesToCollection(theaterCollection, collectionVideos, moviesInCollectio
 		if item in moviesInCollection:
 			continue
 		else:
+			print (f"{Colors.GREEN}addeding {Colors.ENDC}" + item.title)
 			finalAddedMovies.append(item)
-			print (f"{Colors.GREEN}added {Colors.ENDC}" + item.title)
 
 	if len(finalAddedMovies) != 0:
 		theaterCollection.addItems(finalAddedMovies)
