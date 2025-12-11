@@ -26,8 +26,9 @@ class Colors:
     GREEN = '\033[92m'
     ENDC = '\033[0m'
 
+# Get the movies collection if it exists, if not create the collection
 def getCollection(collectionVideos):
-	MovieLibrary = plex.library.section('Movies')
+	MovieLibrary = plex.library.section(sys.argv[3])
 	try:
 		theaterCollection = MovieLibrary.collection('In Theaters')
 	except:
@@ -38,6 +39,7 @@ def getCollection(collectionVideos):
 		print ("Theater collection does not exist, creating collection...")
 	return theaterCollection
 
+# Get now playing in theaters movies from fandango
 def getNowPlaying():
 	print ("Getting now playing movies from https://www.fandango.com/movies-in-theaters")
 	nowPlayingMovies = []
@@ -53,6 +55,7 @@ def getNowPlaying():
 		nowPlayingMovies.append(movieString)
 	return nowPlayingMovies
 
+# search the plex server library for movies from the fandango movies in theaters page
 def getMoviesFromPlex(nowPlaying):
 	print ("Getting items from plex libaray for comparison")
 	collectionVideos = []
