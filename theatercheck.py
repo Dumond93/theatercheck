@@ -63,7 +63,7 @@ def getMoviesFromPlex(nowPlaying):
 		for video in plex.search(i):
 			if video.type == "movie":
 				if video.title == i:
-					print ("Theater move title " + i + " matches plex library title " + video.title + " with video year " + video.year)
+					print ("Theater move title " + i + " matches plex library title " + video.title + " with video year " + str(video.year))
 					if video.year == currentYear or video.year == previousYear:
 						collectionVideos.append(video)
 	return collectionVideos
