@@ -87,7 +87,7 @@ def addMoviesToCollection(theaterCollection, collectionVideos, moviesInCollectio
 		theaterCollection.addItems(finalAddedMovies)
 		print ("added " + str(len(finalAddedMovies)) + " items to collection")
 	else:
-		print (f"{Colors.YELLOW} No new items to add to the collection{Colors.ENDC}")
+		print (f"{Colors.YELLOW}No new items to add to the collection{Colors.ENDC}")
 
 def removeMoviesFromCollection(theaterCollection, moviesInCollection, collectionVideos):
 	finalRemovedMovies= []
