@@ -57,10 +57,10 @@ def getNowPlaying():
 
 # search the plex server library for movies from the fandango movies in theaters page
 def getMoviesFromPlex(nowPlaying):
-	print ("Getting items from plex libaray for comparison")
+	print ("Getting items from plex library for comparison")
 	collectionVideos = []
 	for i in nowPlaying:
-		for video in plex.search(i):
+		for video in MovieLibrary.search(i):
 			if video.type == "movie":
 				if video.title == i:
 					print ("Theater move title " + i + " matches plex library title " + video.title + " with video year " + str(video.year))
@@ -79,7 +79,7 @@ def addMoviesToCollection(theaterCollection, collectionVideos, moviesInCollectio
 		if item in moviesInCollection:
 			continue
 		else:
-			print (f"{Colors.GREEN}addeding {Colors.ENDC}" + item.title)
+			print (f"{Colors.GREEN}adding {Colors.ENDC}" + item.title)
 			finalAddedMovies.append(item)
 
 	if len(finalAddedMovies) != 0:
