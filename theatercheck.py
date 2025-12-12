@@ -104,7 +104,7 @@ def removeMoviesFromCollection(theaterCollection, moviesInCollection, collection
 		
 
 # Main
-print ("Theater Checker running")
+print (f"{Colors.GREEN}Theater Checker running{Colors.ENDC}")
 while True:
 	nowPlaying = getNowPlaying()
 	collectionVideos = getMoviesFromPlex(nowPlaying)
