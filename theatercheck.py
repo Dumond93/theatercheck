@@ -24,6 +24,7 @@ previousYear = currentYear - 1
 class Colors:
     RED = '\033[91m'
     GREEN = '\033[92m'
+    YELLOW = '\033[1;33m'
     ENDC = '\033[0m'
 
 # Get the movies collection if it exists, if not create the collection
@@ -85,6 +86,8 @@ def addMoviesToCollection(theaterCollection, collectionVideos, moviesInCollectio
 	if len(finalAddedMovies) != 0:
 		theaterCollection.addItems(finalAddedMovies)
 		print ("added " + str(len(finalAddedMovies)) + " items to collection")
+	else:
+		print (f"{Colors.YELLOW} No new items to add to the collection{Colors.ENDC}")
 
 def removeMoviesFromCollection(theaterCollection, moviesInCollection, collectionVideos):
 	finalRemovedMovies= []
@@ -106,6 +109,5 @@ while True:
 	moviesInCollection = getMoviesInCollection(theaterCollection)
 	addMoviesToCollection(theaterCollection, collectionVideos, moviesInCollection)
 	removeMoviesFromCollection(theaterCollection, moviesInCollection, collectionVideos)
-	print ("Collection items added successfully")
 	print ("Waiting " +sys.argv[4]+ " seconds before checking again...")
 	time.sleep(int(sys.argv[4]))
