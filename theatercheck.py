@@ -99,6 +99,9 @@ def removeMoviesFromCollection(theaterCollection, moviesInCollection, collection
 
 	if len(finalRemovedMovies) != 0:
 		theaterCollection.removeItems(finalRemovedMovies)
+	else:
+		print(f"{Colors.YELLOW}There is nothing to remove from the collection{Colors.ENDC}") 
+		
 
 # Main
 print ("Theater Checker running")
